@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Lollipop Store 应用清单",
+  "description": "本站唯一需要人工维护的文件，位于 app/apps.json。应用是数组，新增条目直接追加；安装包按声明的平台自动从最新一次发布中检索。",
+  "type": "object",
+  "required": ["site", "apps"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "指向本文件，用于编辑器校验。"
+    },
+    "site": {
+      "type": "object",
+      "description": "站点信息。",
+      "required": ["title", "domain"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "description": "站点标题，显示在顶栏与页面标题。" },
+        "domain": {
+          "type": "string",
+          "description": "部署域名，用于生成分享链接与静态接口中的页面地址，例如 m.looly.top。"
+        },
+        "about": { "type": "string", "description": "关于页的一段说明，保持简短。" }
+      }
+    },
+    "apps": {
+      "type": "array",
+      "description": "应用清单。顺序不影响展示，首页按发布时间排序。",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/app" }
+    }
+  },
+  "definitions": {
+    "app": {
+      "type": "object",
+      "required": ["repository", "name", "summary", "platform", "tags"],
+      "additionalProperties": false,
+      "properties": {
+        "repository": {
+          "type": "string",
+          "pattern": "^https?://github\\.com/[^/\\s]+/[^/\\s]+/?$",
+          "description": "仓库的完整地址，例如 https://github.com/Mr-XiaoLiang/MediaFlow。页面标识由仓库名自动生成。"
+        },
+        "name": { "type": "string", "description": "显示名称，可以与仓库名不同。" },
+        "summary": {
+          "type": "string",
+          "description": "一句话说明，显示在卡片上，建议不超过二十个字。"
+        },
+        "description": {
+          "type": "string",
+          "description": "详情页的功能说明，使用换行符分段。省略时只显示 summary。"
+        },
+        "platform": {
+          "type": "array",
+          "description": "运行平台，可写多个。构建时按平台检索安装包：Android 与 WearOS 取 apk，iOS 取 ipa，Windows 取 msi / exe / msix / zip，macOS 取 dmg / pkg / zip，Linux 取 AppImage / deb / rpm / tar.gz。检索不到的平台不会展示。",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["Android", "iOS", "WearOS", "Windows", "MacOS", "Linux"]
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "用途标签，用于首页筛选与搜索。"
+        },
+        "emoji": {
+          "type": "string",
+          "description": "没有准备图标时使用的降级符号。"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标文件名，只写文件名，文件放在 app/icons/ 目录，例如 mediaflow.png。构建时复制到 /icons/ 下。省略时依次降级为 emoji 与名称首字。",
+          "pattern": "^[^/\\\\]+$"
+        }
+      }
+    }
+  }
+}

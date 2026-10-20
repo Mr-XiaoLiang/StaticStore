@@ -1,0 +1,73 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # 每天一次取数：更新频率远低于构建频率，没必要在访问时请求 GitHub
+  schedule:
+    - cron: '17 19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 取数失败会让整个构建失败，Pages 因此不会发布，
+      # 线上继续保留上一次成功的产物，这本身就是回退机制。
+      # GITHUB_TOKEN 只对当前仓库有效，读不到其它仓库；
+      # 要读取别的私有仓库，需另外配置具备 repo 读取权限的 RELEASES_TOKEN。
+      - name: Fetch latest releases
+        run: node scripts/fetch-releases.mjs --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Build data
+        run: node scripts/build-data.mjs
+
+      - name: Build site
+        run: npx vite build
+        env:
+          STORE_BASE: ${{ vars.STORE_BASE }}
+
+      - name: Prerender app shells
+        run: node scripts/prerender.mjs
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

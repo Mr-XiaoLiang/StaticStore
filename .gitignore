@@ -1,0 +1,14 @@
+node_modules
+dist
+.cache
+.DS_Store
+*.local
+
+# 编辑器与协作工具的本地状态，不进版本库
+.codebuddy
+
+# 构建期生成的中间数据，每次构建都会重写
+src/generated
+public/api
+# 图标源文件在 app/icons/，public/icons 是构建时复制出来的产物
+public/icons

@@ -1,0 +1,119 @@
+/* ============================================
+   Lollipop Store — 设计令牌
+   与品牌站同族：沿用缓动、间距、圆角与字体栈，
+   颜色另立，取中性炭黑与琥珀，避免与入口牌墙重叠。
+   ============================================ */
+
+:root {
+  /* 排版 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC",
+    "Helvetica Neue", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* 缓动：与品牌站完全一致，两站的动效体感属于同一家族 */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* 圆角：商店比入口牌墙更收敛 */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* 时长 */
+  --dur-fast: 140ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+
+  /* 层级 */
+  --z-bg: 0;
+  --z-base: 1;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}
+
+/* ----- 暗色（默认）----- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-canvas: #0b0c10;
+  --bg-surface: rgba(22, 24, 31, 0.72);
+  --bg-surface-strong: rgba(30, 33, 42, 0.9);
+  --bg-elevated: rgba(40, 44, 56, 0.92);
+
+  --text-primary: #ecedf3;
+  --text-secondary: rgba(236, 237, 243, 0.66);
+  --text-tertiary: rgba(236, 237, 243, 0.42);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --accent: #e8c97a;
+  --accent-soft: #f2d896;
+  --accent-ink: #14151a;
+  --accent-gradient: linear-gradient(135deg, #f2d896 0%, #e8c97a 100%);
+  --accent-glow: rgba(232, 201, 122, 0.28);
+
+  --status-ok: #5fd3a0;
+  --status-ios: #b8c4d9;
+  --status-wear: #6fa8ff;
+  --status-windows: #62b5e5;
+  --status-macos: #a9aec0;
+  --status-linux: #e0a45e;
+  --status-source: #6b7186;
+  --status-danger: #e45c5c;
+
+  --shadow-card: 0 18px 40px -20px rgba(0, 0, 0, 0.85);
+  --shadow-elevated: 0 28px 60px -24px rgba(0, 0, 0, 0.9);
+}
+
+/* ----- 浅色 ----- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-canvas: #f4f4f6;
+  --bg-surface: rgba(255, 255, 255, 0.72);
+  --bg-surface-strong: rgba(255, 255, 255, 0.92);
+  --bg-elevated: rgba(255, 255, 255, 0.96);
+
+  --text-primary: #16171c;
+  --text-secondary: rgba(22, 23, 28, 0.66);
+  --text-tertiary: rgba(22, 23, 28, 0.42);
+
+  --border-subtle: rgba(20, 21, 26, 0.1);
+  --border-strong: rgba(20, 21, 26, 0.18);
+
+  --accent: #9a7526;
+  --accent-soft: #b98d33;
+  --accent-ink: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #c79a3e 0%, #9a7526 100%);
+  --accent-glow: rgba(154, 117, 38, 0.22);
+
+  --status-ok: #14855c;
+  --status-ios: #55627a;
+  --status-wear: #2f6fd0;
+  --status-windows: #1c74a8;
+  --status-macos: #5b6070;
+  --status-linux: #a4631c;
+  --status-source: #6b7186;
+  --status-danger: #c03b3b;
+
+  --shadow-card: 0 18px 40px -24px rgba(20, 21, 26, 0.28);
+  --shadow-elevated: 0 28px 60px -28px rgba(20, 21, 26, 0.32);
+}

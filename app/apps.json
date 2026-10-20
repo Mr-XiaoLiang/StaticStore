@@ -1,0 +1,172 @@
+{
+  "$schema": "../apps.schema.json",
+  "site": {
+    "title": "Lollipop Store",
+    "domain": "m.looly.top",
+    "about": "POP的软件小店"
+  },
+  "apps": [
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/MediaFlow",
+      "name": "Media Flow",
+      "summary": "本地视频、图片与音频的一体化浏览与播放",
+      "description": "以短视频的方式浏览本地媒体：列表为瀑布流，播放页上下滑动即可切换，全部操作由手势完成，支持快进、快退与变速。\n\n视频、图片与音频统一管理，可按文件夹添加与归档，隐私模式下的内容单独成组；图片支持流式浏览，适合连续查看长篇图集。",
+      "platform": ["Android"],
+      "tags": ["播放器", "图库", "音频"],
+      "emoji": "🎬"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/LQR",
+      "name": "LQR 二维码",
+      "summary": "二维码生成与识别，扫码结果可直接复制",
+      "description": "把文字或链接生成二维码，也可以调用相机识别二维码，结果可直接复制或再次生成。\n\n界面适配横屏、竖屏与挖孔屏，扫码页在各类机型上都能完整显示。",
+      "platform": ["Android"],
+      "tags": ["工具", "二维码"],
+      "emoji": "🔳"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/Tamagotchi",
+      "name": "电子宠物",
+      "summary": "手表上的单宠养成，随照顾情况改变状态",
+      "description": "从大量宠物中选定一只，此后只照顾它：喂食、玩耍、抚摸、治疗都在表盘上完成，它会按照顾情况改变表情与状态。\n\n主屏向左滑动可展开常用应用、系统设置与通讯入口，不必退出应用即可处理日常操作。",
+      "platform": ["WearOS"],
+      "tags": ["养成", "宠物", "手表"],
+      "emoji": "🐾"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/fillLight",
+      "name": "彩色补光灯",
+      "summary": "用手机屏幕充当彩色补光灯",
+      "description": "按色相与饱和度调出需要的颜色，铺满整块屏幕作为补光灯使用；可以记录常用颜色，也能直接调整屏幕亮度，拍照前不必再翻相册找色卡。",
+      "platform": ["Android"],
+      "tags": ["拍照", "补光", "工具"],
+      "emoji": "💡"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/BabyCalendar",
+      "name": "宝贝日历",
+      "summary": "孕期进度与产检节点一目了然",
+      "description": "输入末次生理期开始时间，显示当前孕周与剩余天数，并按 280 天标准孕期给出预产期倒计时。\n\n内置标准产检时间表，从确认宫内孕到分娩前的各次检查都能按孕周查看。",
+      "platform": ["Android"],
+      "tags": ["孕期", "健康", "工具"],
+      "emoji": "👶"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/MusicFlip",
+      "name": "Music Flip",
+      "summary": "本地影音浏览，音频播放模块开发中",
+      "description": "视频与图片浏览沿用 Media Flow 的手势操作：瀑布流列表、上下滑动切换、播放页手势快进与变速。\n\n音频播放尚在准备中，当前没有可安装的版本，可从源码查看进展。",
+      "platform": ["Android"],
+      "tags": ["播放器", "音乐", "音频"],
+      "emoji": "🎵"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/LState",
+      "name": "LState",
+      "summary": "在菜单栏用折线图查看设备占用",
+      "description": "菜单栏图标以折线图实时显示 CPU、GPU 与内存占用，不必打开活动监视器即可看到趋势。\n\n点击图标展开信息面板，列出各项参数与占比，以及网络数据。",
+      "platform": ["MacOS"],
+      "tags": ["系统", "监控", "工具"],
+      "emoji": "📊"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/AndroidBuildClear",
+      "name": "BuildClean",
+      "summary": "批量查找并清理 Android 工程的构建产物",
+      "description": "添加若干工程根目录后，自动递归查找各模块下的 build 目录，列出后逐项勾选，确认再批量删除。\n\n提供安装程序与磁盘映像两种形式，Windows 与 macOS 均可直接安装。目录清单会保存，下次打开仍在。",
+      "platform": ["Windows", "MacOS"],
+      "tags": ["开发", "工具"],
+      "emoji": "🧹"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/AndroidBuildClear-Swift",
+      "name": "BuildClean 原生版",
+      "summary": "原生 macOS 界面，扫描并清理 Gradle 构建产物",
+      "description": "用原生界面管理待扫描的根文件夹，递归找出各模块的 build 目录，勾选后批量删除。\n\n文件夹清单与访问权限一并保留，重启后无需重新授权。",
+      "platform": ["MacOS"],
+      "tags": ["开发", "工具"],
+      "emoji": "🧹"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/ClipboardDesktop",
+      "name": "Clipboard",
+      "summary": "本次运行期间持续记录复制过的内容",
+      "description": "在后台记录本次运行中出现的剪贴板内容，按时间排列，随时回看并再次复制。\n\n记录只存在内存中，关闭应用即清空，不在磁盘上留下副本。",
+      "platform": ["Windows", "MacOS"],
+      "tags": ["效率", "工具"],
+      "emoji": "📋"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/MazeWear",
+      "name": "迷宫",
+      "summary": "手表上的迷宫小游戏",
+      "description": "在圆形表盘上走出迷宫，抬手即可玩一局，适合碎片时间。",
+      "platform": ["WearOS"],
+      "tags": ["游戏", "手表"],
+      "emoji": "🌀"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/PhotoManager",
+      "name": "照片管理器",
+      "summary": "按名称配对 RAW 与 JPG，删除多余的一份",
+      "description": "相机拍摄通常同时产生同名的 RAW 与 JPG 文件。这里按名称把两者配对列出，勾选后删除不需要的一份，保留需要保留的格式，适合整理大量照片素材。",
+      "platform": ["Windows"],
+      "tags": ["图像", "工具"],
+      "emoji": "🖼️"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/AppList",
+      "name": "App List",
+      "summary": "查看设备内应用的名称、包名与内置 SDK",
+      "description": "列出设备上已安装的应用，显示名称、图标与包名，可直接打开应用或其设置页，也能一键复制包名。\n\n内置 SDK 按应用整理，用于确认某个应用使用了哪些第三方组件。",
+      "platform": ["Android"],
+      "tags": ["工具", "应用管理"],
+      "emoji": "🗂️"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/lWearApps",
+      "name": "手表小应用合集",
+      "summary": "手表上的文件管理器与小应用合集",
+      "description": "当前版本提供文件管理器，可在手表上浏览文件，并与手机互传、管理文件。\n\n同一仓库还收录井字棋、电子木鱼、气压计、桌面宠物等小应用，各自单独发布。",
+      "platform": ["WearOS"],
+      "tags": ["手表", "工具"],
+      "emoji": "⌚"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/LPunch",
+      "name": "LPunch 打卡",
+      "summary": "为每天要做的事建立打卡项",
+      "description": "每件事对应一个打卡项，颜色自动分配，顺序可调整；当天完成的项会从列表隐藏。\n\n统计给出每项的累计、本周、本月与本年次数，并附最近十二个月每月的打卡天数。",
+      "platform": ["Android"],
+      "tags": ["习惯", "效率", "工具"],
+      "emoji": "✅"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/Now",
+      "name": "Now 校对时钟",
+      "summary": "与网站服务器同步的时间显示",
+      "description": "显示与网站服务器对齐的时间，精确到秒，用于需要卡点提交或抢购的场景。\n\n相比系统时间，这里以站点时间为准，避免因本地时钟偏差错过时机。",
+      "platform": ["Android"],
+      "tags": ["时间", "工具"],
+      "emoji": "⏱️"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/LSudoku",
+      "name": "数独",
+      "summary": "自动生成棋盘的数独练习",
+      "description": "每局棋盘自动生成，支持横竖屏与屏幕旋转切换；内置多套主题与配色选择。\n\n对局记录保存在本地，退出后可以继续上次的进度。",
+      "platform": ["Android"],
+      "tags": ["游戏", "益智"],
+      "emoji": "🔢"
+    },
+    {
+      "repository": "https://github.com/Mr-XiaoLiang/LCompass",
+      "name": "指南针",
+      "summary": "调用设备传感器指示方位",
+      "description": "读取设备方向传感器显示方位，界面简洁，读数清晰，适合户外辨向时快速查看。",
+      "platform": ["Android"],
+      "tags": ["工具", "户外"],
+      "emoji": "🧭"
+    }
+  ]
+}
