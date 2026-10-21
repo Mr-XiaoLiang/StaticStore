@@ -3,9 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # 每天一次取数：更新频率远低于构建频率，没必要在访问时请求 GitHub
-  schedule:
-    - cron: '17 19 * * *'
+  # 不设定时任务：页面数据只在推送到 main 或手动运行时重新取。
+  # 发布新版本后若没有推送本仓库，需要在 Actions 页面手动运行一次，
+  # 否则线上版本号会停留在上一次构建时的取值。
   workflow_dispatch:
 
 permissions:

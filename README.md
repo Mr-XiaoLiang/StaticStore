@@ -82,7 +82,7 @@ npm run preview      # 预览构建产物
 
 ## 部署
 
-推送到 `main` 触发构建，每天 19:17 UTC 也会自动运行一次定时任务。
+推送到 `main` 触发构建；也可以在 Actions 页面手动运行 `Deploy to GitHub Pages`。工作流没有配置定时任务，因此发布了新版本但未推送本仓库时，需要手动运行一次，页面上的版本号与产物信息才会更新。
 
 首次部署需要在仓库的 Settings → Pages 里把来源设为 GitHub Actions，并确认仓库根目录的 `CNAME` 内容为 `m.looly.top`（构建时会复制一份进产物），同时在域名服务商处添加指向 `Mr-XiaoLiang.github.io` 的 CNAME 记录。
 
